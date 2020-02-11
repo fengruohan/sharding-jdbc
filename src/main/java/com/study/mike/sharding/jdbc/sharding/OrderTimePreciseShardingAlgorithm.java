@@ -20,6 +20,10 @@ public class OrderTimePreciseShardingAlgorithm implements PreciseShardingAlgorit
 		dateRanges[1] = cal.getTime();
 	}
 
+	/**
+	 * 第一个参数，根据选择的数据源分片策略（ds0,ds1）和表分片策略(table1,table2)来决定
+	 * 第二个指	分片健的值，getValue得到值，根据业务规则再去分片
+	 */
 	@Override
 	public String doSharding(Collection<String> availableTargetNames, PreciseShardingValue<Date> shardingValue) {
 		
